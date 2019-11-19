@@ -1,0 +1,40 @@
+
+micronaut:
+  application:
+    name: hello-micronaut
+  security:
+    enabled: true
+    endpoints:
+      login:
+        enabled: true
+      oauth:
+        enabled: true
+    token:
+      jwt:
+        enabled: true
+        signatures:
+          secret:
+            generator:
+              secret: pleaseChangeThisSecretForANewOne
+
+jooq:
+  datasources:
+    default:
+      sql-dialect: 'POSTGRES'
+      url: jdbc:postgresql://localhost:5432/pgsqltest
+      username: postgres
+      password: 123456
+      driverClassName: org.postgresql.Driver
+
+
+
+
+credentials:
+  users:
+    user: 1234
+    admin: admin
+  roles:
+    user: VIEW
+    admin:
+      - ADMIN
+      - VIEW
